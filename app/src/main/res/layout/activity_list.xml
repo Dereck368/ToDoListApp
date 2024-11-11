@@ -10,7 +10,7 @@
     <TextView
         android:id="@+id/Header"
         android:layout_width="match_parent"
-        android:layout_height="54dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="TEMP"
         android:textAlignment="center"
@@ -23,9 +23,9 @@
     <LinearLayout
         android:id="@+id/ItemsList"
         android:layout_width="match_parent"
-        android:layout_height="597dp"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/ItemCreation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Header"></LinearLayout>
@@ -33,11 +33,11 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/ItemCreation"
         android:layout_width="match_parent"
-        android:layout_height="72dp"
-        android:focusable="true"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" >
+        app:layout_constraintStart_toStartOf="parent">
 
         <EditText
             android:id="@+id/ItemName"
@@ -46,11 +46,10 @@
             android:layout_marginStart="28dp"
             android:autofillHints="@string/task"
             android:ems="10"
+            android:focusable="true"
             android:hint="@string/task"
             android:inputType="text"
             android:label="@string/task"
-            android:focusable="true"
-            android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

@@ -8,15 +8,15 @@
     tools:context=".MainActivity">
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="659dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:contentDescription="@string/Collection"
-        app:layout_constraintBottom_toTopOf="@+id/ItemCreation"
+        android:fillViewport="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
 
         <LinearLayout
             android:id="@+id/navigate"
@@ -28,8 +28,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/ItemCreation"
         android:layout_width="match_parent"
-        android:layout_height="72dp"
-        android:focusable="true"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -44,7 +44,6 @@
             android:hint="@string/addlistname"
             android:inputType="text"
             android:label="@string/addlistname"
-            android:focusable="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -62,5 +61,17 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:drawable/ic_input_add" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TO DO LISTS"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
