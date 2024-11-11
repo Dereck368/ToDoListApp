@@ -37,22 +37,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // This set action for addItem
-        FloatingActionButton fab = findViewById(R.id.addItem);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                createToDoList(view);
-            }
-        });
+        FloatingActionButton fab = findViewById(R.id.addList);
+        fab.setOnClickListener(this::createToDoList);
 
         // Initialize SharedPrefrences and names
         sp = this.getSharedPreferences("names_pref", MODE_PRIVATE);
         names = sp.getStringSet("Used_names", new HashSet<>());
 
         // Remake already saved List
-        for (String name: names) {
-            createList(name);
-        }
+        remakeList();
     }
 
     //todo add delete function
@@ -89,14 +82,11 @@ public class MainActivity extends AppCompatActivity {
         nav.addView(toDoList);
 
         // assign button functionality
-        toDoList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // send name of button to Activity_list and opens Activity_list
-                Intent intent = new Intent(MainActivity.this, List.class);
-                intent.putExtra("NAME", name);
-                startActivity(intent);
-            }
+        toDoList.setOnClickListener(v -> {
+            // send name of button to Activity_list and opens Activity_list
+            Intent intent = new Intent(MainActivity.this, List.class);
+            intent.putExtra("NAME", name);
+            startActivity(intent);
         });
     }
 
@@ -105,5 +95,11 @@ public class MainActivity extends AppCompatActivity {
 
         editor.putStringSet("Used_names", names);
         editor.apply();
+    }
+
+    private void remakeList(){
+        for (String name: names) {
+            createList(name);
+        }
     }
 }

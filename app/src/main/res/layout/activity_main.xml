@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="659dp"
         android:contentDescription="@string/Collection"
-        app:layout_constraintBottom_toTopOf="@+id/listCreation"
+        app:layout_constraintBottom_toTopOf="@+id/ItemCreation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,8 +26,8 @@
     </ScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/listCreation"
-        android:layout_width="409dp"
+        android:id="@+id/ItemCreation"
+        android:layout_width="match_parent"
         android:layout_height="72dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,7 +48,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/addItem"
+            android:id="@+id/addList"
             android:layout_width="68dp"
             android:layout_height="wrap_content"
             android:clickable="true"

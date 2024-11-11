@@ -15,39 +15,42 @@ import java.util.List;
  * mobile app we want user to be able to delete any
  * item they want
  */
-public class ToDoList implements Parcelable {
+public class ToDoList /*implements Parcelable*/ {
     private final int size;
     private int capacity;
     private Node<String> head;
     private Node<String> tail;
 
     // todo need a get method for name, also need to set up id.
-    private String name;
+    private final String name;
 
     public ToDoList(String name) {
         size = 10;
         capacity = 0;
         head = null;
         tail = null;
+        this.name = name;
     }
 
     //add item to todolist
-    public void addToList(String item) {
+    public Node<String> addToList(String item) {
         if (capacity < size) {
             if (head == null) {
                 Node<String> n = new Node<String>(item);
                 head = n;
                 tail = n;
                 capacity += 1;
+                return n;
             } else {
                 Node<String> n = new Node<String>(item, null);
                 tail.setNext(n);
                 n.setPrev(tail);
                 tail = n;
                 capacity += 1;
+                return n;
             }
         } else {
-            System.out.println("list is full: delete item before adding new one");
+            return new Node<>(); //"list is full: delete item before adding new one"
         }
     }
 
@@ -99,8 +102,8 @@ public class ToDoList implements Parcelable {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public Node<String> getHead() {
+        return head;
     }
 
     @NonNull
@@ -124,8 +127,11 @@ public class ToDoList implements Parcelable {
         return build.toString();
     }
 
-    // todo parcable implemenation
+    // thought I would need it to develop activity transfer,
+    // decide to just send name, and have list activity have its
+    // own sp for the list, which can be accesed by name
 
+    /*
     // Ignore
     @Override
     public int describeContents() {
@@ -181,5 +187,7 @@ public class ToDoList implements Parcelable {
         capacity = in.readInt();
         name = in.readString();
     }
+     */
+
 }
 

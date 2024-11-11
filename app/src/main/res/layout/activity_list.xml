@@ -7,4 +7,65 @@
     android:layout_height="match_parent"
     tools:context=".List">
 
+    <TextView
+        android:id="@+id/Header"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginTop="4dp"
+        android:text="TEMP"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/ItemsList"
+        android:layout_width="match_parent"
+        android:layout_height="597dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/ItemCreation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Header"></LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ItemCreation"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" >
+
+        <EditText
+            android:id="@+id/ItemName"
+            android:layout_width="262dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="28dp"
+            android:autofillHints="@string/task"
+            android:ems="10"
+            android:hint="@string/task"
+            android:inputType="text"
+            android:label="@string/task"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addItem"
+            android:layout_width="68dp"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:contentDescription="@string/ToDoObject"
+            android:focusable="true"
+            android:onClick="addTask"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ItemName"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_input_add" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

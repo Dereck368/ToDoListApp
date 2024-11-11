@@ -5,6 +5,16 @@ public class Node<E> {
     private Node<E> prev;
     private Node<E> next;
 
+    public Node() {
+        data = null;
+        prev = null;
+        next = null;
+    }
+
+    public boolean isEmpty() {
+        return data == null && prev == null && next == null;
+    }
+
     public Node(E item) {
         data = item;
         prev = null;
