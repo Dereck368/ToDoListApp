@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
     private void saveUsedListNames(Set<String> names) {
         SharedPreferences.Editor editor = sp.edit();
 
-        editor.putStringSet("Used_names", names);
+        editor.putStringSet("Used_names", new HashSet<>(names));
         editor.apply();
     }
 

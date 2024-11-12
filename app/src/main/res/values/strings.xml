@@ -4,5 +4,6 @@
     <string name="addlistname">Add List Name</string>
     <string name="Collection">Collection of ToDoLists</string>
     <string name="task">Add Task</string>
+    <string name="list">TO DO LISTS</string>
 
 </resources>
